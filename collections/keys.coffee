@@ -2,8 +2,9 @@
 
 Meteor.methods(
   makeKey: (keyAttributes)->
+    console.log keyAttributes
     if not keyAttributes.pkey
-      throw new Meteor.Error(422, "Please submit key")
+      console.log "Incorrect pkey"
     key =
       pkey: keyAttributes.pkey
     keyId = Keys.insert(key)

@@ -1,16 +1,17 @@
-Router.configure
-  loadingTemplate: 'loading'
-  layoutTemplate: 'layout'
-
 Router.map ->
   @route 'landingPage',
+    loadingTemplate: 'loading'
+    layoutTemplate: 'layout'
     path: '/'
 
   @route 'key',
-    path: '/key/:keyname'
+    path: '/key'
+    where: 'server'
     action: ()->
+      console.log('hit key')
+      console.log(@request.body.pkey)
       pkey =
-        pkey: @params.keyname
+        pkey: @request.body.pkey
 
       Meteor.call 'makeKey', pkey, (error, id)->
         if error
