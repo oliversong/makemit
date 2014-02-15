@@ -1,0 +1,11 @@
+<template name="landingPage">
+  <div class="col-md-12">
+    <h1>Stolen private keys:</h1>
+    <ul>
+    {{#each keys}}
+      <li>{{ this.pkey }}</li>
+    {{/each}}
+    </ul>
+  </div>
+
+</template>

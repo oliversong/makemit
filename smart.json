@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "spin": {},
+    "bootstrap-3": {},
+    "iron-router": {},
+    "router": {},
+    "errors": {}
+  }
+}
