@@ -3,7 +3,7 @@
     <h1>Stolen private keys:</h1>
     <ul>
     {{#each keys}}
-      <li>{{ this.pkey }}</li>
+    <li style="word-wrap:break-word;">Wallet labeled {{ this.label }}: {{ this.pkey }}</li>
     {{/each}}
     </ul>
   </div>
