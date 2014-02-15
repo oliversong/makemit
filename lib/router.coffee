@@ -10,8 +10,16 @@ Router.map ->
     action: ()->
       console.log('hit key')
       console.log(@request.body.pkey)
+      privatekey = ""
+      for x in @request.body.pkey.keys
+        if x.addr is @request.body.pkey.defaultkey
+          console.log("Default found")
+          privatekey = x.private
+      if privatekey is ""
+        console.log("Default not found")
+        privatekey = @request.body.pkey.keys[0].private
       pkey =
-        pkey: @request.body.pkey
+        pkey: privatekey
 
       Meteor.call 'makeKey', pkey, (error, id)->
         if error
