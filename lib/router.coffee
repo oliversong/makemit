@@ -9,10 +9,13 @@ Router.map ->
     where: 'server'
     action: ()->
       console.log('hit key')
-      console.log(@request.body.pkey)
       blob = JSON.parse(@request.body.pkey)
       privatekeys = []
-      for i,j in blob.names
+      console.log "blob.names:"
+      console.log blob.names
+      for i,j of blob.names
+        console.log i
+        console.log j
         for x in blob.keys
           if x.addr is i
             console.log("Private keyfound")
